@@ -4,8 +4,8 @@ from binance.client import Client
 from datetime import datetime as dt
 from datetime import timedelta
 
-api_key = "CHANGE THIS"
-api_secret = "CHANGE THIS"
+api_key = "KEY"
+api_secret = "SECRET"
 
 client = Client(api_key, api_secret)
 
@@ -98,7 +98,7 @@ def scrape_hourly_candles(market="BTCUSDT", startingDate = dt(2018,9,14)):
                                 "close": k[:,4]
                                 })
              
-             append_df_to_excel("/data/"+market+".xlsx", df, startrow=row)
+             append_df_to_excel("./data/"+market+".xlsx", df, startrow=row)
              row+=24
          i+=1
          print("saved "+str(row)+"rows of data")
