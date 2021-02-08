@@ -53,6 +53,7 @@ class TradingGraph:
     def render_trades(self,  current_step, lbw, trades):
         for splot, coin in zip(self.axs.flatten(), trades):
             for trade in coin:
+                clr = 'yellow'
                 if current_step>trade[1]>current_step-lbw:
                     #plot the point at which the trade happened
                     if trade[0]=='buy':
